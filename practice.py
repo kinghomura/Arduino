@@ -11,9 +11,12 @@ while (1):
 
     f = open("data.csv", "a")
     writer = csv.writer(f, lineterminator='\n')
-
     writer.writerow([datetime.datetime.today(), num])
+    f.close()
 
+    f = open("nowTemp.csv", "w")
+    writer = csv.writer(f, lineterminator='\n')
+    writer.writerow([datetime.datetime.today(), num])
     f.close()
 
     time.sleep(1)
